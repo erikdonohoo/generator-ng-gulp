@@ -1,0 +1,40 @@
+<!doctype html><html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title><%= humanAppName %></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+		<!-- build:css styles/vendor.css -->
+		<!-- bower:css -->
+		<!-- endbower -->
+		<!-- endbuild -->
+		<!-- build:localcss styles/main.css -->
+		<link rel="stylesheet" href="main.css">
+		<!-- endbuild -->
+	</head>
+	<body ng-app="<%= appName %>" <% if (useMaterialDesign) { %>layout="column"<% } %>>
+
+		<!-- Add your site or application content here -->
+
+		<main <% if (router === 'ui-router') { %>ui-view <% } else if (router === 'ngRoute') { %>ng-view <% } %><% if (useMaterialDesign) { %>flex<% } %>>
+		</main>
+
+		<footer><% if (useFontAwesome) { %>
+			<i class="fa fa-facebook-official"></i><% } %>
+			<div class="github"></div>
+			<span>{{appName}} : {{version}}</span>
+		</footer>
+
+		<!-- build:js scripts/vendor.js -->
+		<!-- bower:js -->
+		<!-- endbower -->
+		<!-- endbuild -->
+
+		<!-- build:localjs({.generated,app}) scripts/scripts.js -->
+		<script src="app.js"></script><% if (useRouting) { %>
+		<script src="routes/routes.module.js"></script>
+		<script src="routes/routes.config.js"></script><% } %>
+		<!-- endbuild -->
+	</body>
+</html>

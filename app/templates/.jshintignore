@@ -1,0 +1,7 @@
+node_modules
+app/bower_components
+/dist/
+.tmp
+Gruntfile.js
+karma.conf.js
+karma-e2e.conf.js
