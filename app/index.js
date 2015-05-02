@@ -24,7 +24,7 @@ Generator.prototype.welcome = function welcome() {
 	if (!this.options['skip-welcome-message']) {
 
 		this.log(yosay(
-			'Welcome to ' + chalk.red('mtc-app-gulp') + '!'
+			'Welcome to ' + chalk.red('ng-gulp') + '!'
 		));
 
 		this.log(
@@ -102,6 +102,7 @@ Generator.prototype.askToCommitBower = function askToCommitBower() {
 	this.prompt([{
 		type: 'confirm',
 		name: 'commitBower',
+		default: false,
 		message: 'Do you plan on commiting files in ' +
 			chalk.red('bower_components') + '?'
 	}], function (props) {
@@ -160,7 +161,9 @@ Generator.prototype.write = function write() {
 	} else {
 		this.template('app/_app.less', 'app/app.css');
 	}
+};
 
+Generator.prototype.install = function install() {
 	this.installDependencies();
 };
 

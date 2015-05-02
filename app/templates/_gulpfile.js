@@ -190,7 +190,7 @@ gulp.task('build-templates', ['build-setup'], function () {
 		.pipe(gulp.dest('.tmp/scripts'));
 });
 gulp.task('build-setup', sync.sync(['clean', ['css', 'js', 'bower'], 'build-setup-run']));
-gulp.task('build-setup-run', ['clean', 'css', 'js', 'bower'], function () {
+gulp.task('build-setup-run', function () {
 
 	return merge(
 
@@ -229,7 +229,7 @@ gulp.task('protractor:server', function (cb) {
 	server.listen(9999, cb);
 });
 gulp.task('protractor', ['protractor:update', 'protractor:server'], function (done) {
-	gulp.src(['test/e2e/**/*.js'], {read:false})
+	gulp.src(['test/e2e/**/*.js'], {read: false})
 		.pipe(protractor.protractor({
 			configFile: './protractor.conf.js',
 			args: ['--baseUrl', 'http://localhost:' + server.address().port]
