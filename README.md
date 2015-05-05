@@ -3,10 +3,10 @@
 ### Goals
 
 * [ ] Allow re-running generator to get updates
-* [ ] Allow for writing in es6 if desired
-* [ ] Should allow for creating components (even nested components)
-* [ ] When making component, allow choosing (filter/service/controller) etc.
-* [ ] Should generate test for each matching component piece
+* [ ] Allow for writing in es6 if desired (Look at generator-gulp-angular for how to handle.  Will be tough with coverage)
+* [x] Should allow for creating components (even nested components)
+* [x] When making component, allow choosing (filter/service/controller) etc.
+* [x] Should generate test for each matching component piece
 * [ ] Should be fully tested
 
 ### Think About
