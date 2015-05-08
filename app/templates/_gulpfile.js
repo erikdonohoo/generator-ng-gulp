@@ -68,10 +68,10 @@ gulp.task('templates', function () {
 
 // Put all JS in one file
 var allPageJs = ['app/app.js', 'app/modules/**/*.+(controller|filter|directive|service|constant|decorator|factory|value|config|run).js'];
-var moduleJs = './app/modules/**/*.module.js';
-var nonModuleJs = './app/modules/**/*.+(controller|filter|directive|service|constant|decorator|factory|value|config|run).js';
+var moduleJs = 'app/modules/**/*.module.js';
+var nonModuleJs = 'app/modules/**/*.+(controller|filter|directive|service|constant|decorator|factory|value|config|run).js';
 gulp.task('js', ['templates'], function () {
-	return gulp.src(['./app/app.js', moduleJs, nonModuleJs])
+	return gulp.src(['app/app.js', moduleJs, nonModuleJs])
 		.pipe(jscs())
 		.pipe(jshint())
 		.pipe(jshint.reporter(stylish))
