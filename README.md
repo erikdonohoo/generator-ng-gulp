@@ -16,3 +16,4 @@
 * [ ] When bower task occurs, write any main js files into karma.conf.js
 * [ ] Add new angular router option when available
 * [ ] Make provider component
+* [ ] Page reload after JS change occurs before files are completely written
