@@ -40,7 +40,7 @@ Generator.prototype.write = function () {
 		}
 
 		this.camelCaseName = _.camelize(this.routeName);
-		this.routeTemplate = 'modules/routes/' + this.routeName + '/' + this.routeName + '.route.html'
+		this.routeTemplate = 'modules/routes/' + this.routeName + '/' + this.routeName + '.route.html';
 		this.template(
 			'_config.js',
 			routePath + this.routeName + '.config.js'
