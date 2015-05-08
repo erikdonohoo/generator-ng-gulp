@@ -49,6 +49,10 @@ Generator.prototype.write = function () {
 			'_route.html',
 			routePath + this.routeName + '.route.html'
 		);
+		this.template(
+			'_.e2e.js',
+			'test/e2e/' + this.routeName + '.e2e.js'
+		);
 
 		utils.writeScript('routes/' + this.routeName + '/' + this.routeName + '.config.js', this);
 	}
