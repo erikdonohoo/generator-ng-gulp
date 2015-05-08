@@ -17,3 +17,5 @@ function ($scope, $http) {
 		$scope.appName = v.name;
 	});
 }]);
+
+angular.module('<%= appName %>.templates', []);
