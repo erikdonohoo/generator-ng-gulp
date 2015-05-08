@@ -5,6 +5,7 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 var path = require('path');
 var _ = require('underscore.string');
+var exec = require('child_process').exec;
 
 var Generator = module.exports = yeoman.generators.Base.extend({
 	constructor: function () {
@@ -178,4 +179,12 @@ Generator.prototype.end = function end() {
 		routerName: this.router
 	});
 	this.config.set('useLess', this.useLess);
+
+	// Make initial home route if routing
+	if (this.useRouting) {
+		var log = this.log;
+		exec('yo ng-gulp:route home /', function (err, stdout) {
+			log(stdout);
+		});
+	}
 };

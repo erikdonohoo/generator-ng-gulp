@@ -1,3 +1,4 @@
 <div class="route">
-	current params : {{<% if (router.routerName === 'ui-router') { %>$stateParams<% } else { %>$routeParams<% } %> | json}}
+	<span><%= routeName %> route</span>
+	<span>current params : {{<% if (router.routerName === 'ui-router') { %>$stateParams<% } else { %>$routeParams<% } %> | json}}</span>
 </div>
