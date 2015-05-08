@@ -31,6 +31,7 @@ var http = require('http');
 var express = require('express');
 var sync = require('gulp-sync')(gulp);
 var server = http.createServer(express().use(express.static(__dirname + '/dist/')));
+var watch = require('gulp-watch');
 
 // Add js/css files to bower:css and bower:js blocks in index.html
 gulp.task('bower', function () {
@@ -244,6 +245,9 @@ gulp.task('protractor', ['protractor:update', 'protractor:server'], function (do
 });
 
 // Reload browser on changes
+gulp.task('reload', function () {
+	reload();
+});
 gulp.task('serve', ['css', 'js', 'bower'], function () {
 	browserSync.init({
 		server: {
@@ -258,7 +262,11 @@ gulp.task('serve', ['css', 'js', 'bower'], function () {
 		'modules/**/*.html',
 		'**/*.+(controller|filter|directive|service|constant|decorator|factory|value|config|run).js'
 	], {cwd: 'app'}, reload);
-	gulp.watch(cssGlob, ['css']);
-	gulp.watch(allPageJs, ['js']);
-	gulp.watch('./bower.json', ['bower']);
+	watch(allPageJs, function () {
+		gulp.start(sync.sync(['js', ['reload']]));
+	})
+	watch(cssGlob, function () {
+		gulp.start('css');
+	});
+	gulp.watch('bower.json', ['bower']);
 });
