@@ -15,7 +15,8 @@ module.exports = function (config) {
 			'app/bower_components/angular-route/angular-route.js',<% } %><% if (useMaterialDesign) { %>
 			'app/bower_components/angular-material/angular-material.js',<% } %>
 			'app/app.js',
-			'.generated/templates.js',
+			'.generated/templates.js'<% if (useRouting) { %>,
+			'.generated/app/modules/routes/routes.concat.js'<% } %>,
 			'.generated/app/**/*.concat.js' // Leave this last!!!
 		],
 
