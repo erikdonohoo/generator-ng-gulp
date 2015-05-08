@@ -21,6 +21,7 @@ var Generator = module.exports = yeoman.generators.Base.extend({
 		this.moduleName = nameRegex.exec(this.modulePath)[1];
 
 		this.appName = this.config.get('appName');
+		this.useLess = this.config.get('useLess');
 
 		// Data
 		this.pkg = require('../package.json');
@@ -104,8 +105,13 @@ Generator.prototype.write = function () {
 				'_tpl.html',
 				'app/' + this.templatePath
 			);
+			this.template(
+				'_.less',
+				this.useLess ? modulePath + this.moduleName + '.less' :
+					modulePath + this.moduleName + '.css'
+			);
 		}
 
-		writeScript(this.modulePath + this.moduleName + '.' + component + '.js');
+		utils.writeScript(this.modulePath + this.moduleName + '.' + component + '.js');
 	}.bind(this));
 };

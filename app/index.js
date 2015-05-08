@@ -177,4 +177,5 @@ Generator.prototype.end = function end() {
 		useRouter: this.useRouting,
 		routerName: this.router
 	});
+	this.config.set('useLess', this.useLess);
 };
