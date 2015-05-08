@@ -1,6 +1,6 @@
 {
   "name": "generator-ng-gulp",
-  "version": "0.1.0-beta.2",
+  "version": "0.1.0-beta.3",
   "description": "generator for building an angular web app with gulp",
   "main": "index.js",
   "scripts": {
