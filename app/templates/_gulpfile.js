@@ -70,6 +70,7 @@ gulp.task('templates', function () {
 var allPageJs = ['app/app.js', 'app/modules/**/*.+(controller|filter|directive|service|constant|decorator|factory|value|config|run).js'];
 var moduleJs = 'app/modules/**/*.module.js';
 var nonModuleJs = 'app/modules/**/*.+(controller|filter|directive|service|constant|decorator|factory|value|config|run).js';
+gulp.task('js-watch', ['js'], reload);
 gulp.task('js', ['templates'], function () {
 	return gulp.src(['app/app.js', moduleJs, nonModuleJs])
 		.pipe(jscs())
@@ -263,8 +264,8 @@ gulp.task('serve', ['css', 'js', 'bower'], function () {
 		'**/*.+(controller|filter|directive|service|constant|decorator|factory|value|config|run).js'
 	], {cwd: 'app'}, reload);
 	watch(allPageJs, function () {
-		gulp.start(sync.sync(['js', ['reload']]));
-	})
+		gulp.start('js-watch');
+	});
 	watch(cssGlob, function () {
 		gulp.start('css');
 	});
