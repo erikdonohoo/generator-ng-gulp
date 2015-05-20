@@ -169,7 +169,7 @@ Generator.prototype.install = function install() {
 };
 
 Generator.prototype.end = function end() {
-	this.log('\n\nGreat! Now let me do so final touch ups...\n\n');
+	this.log('\n\nGreat! Now let me do some final touch ups...\n\n');
 	this.spawnCommand('gulp', ['bower']);
 
 	// Save app name, router info
