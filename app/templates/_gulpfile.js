@@ -43,9 +43,9 @@ gulp.task('bower', function () {
 // Process css
 <% if (!useLess) { %>var cssGlob = ['app/app.css'];<% } else { %>var cssGlob = ['app/app.less', 'app/modules/**/*.less'];<% } %>
 gulp.task('css', function () {
-	gulp.src(cssGlob)<% if (useLess) { %>
+	gulp.src(cssGlob)
+		.pipe(concat('main.css'))<% if (useLess) { %>
 		.pipe(less())<% } %>
-		.pipe(concat('main.css'))
 		.pipe(autoprefixer({
 			remove: false
 		}))

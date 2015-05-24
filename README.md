@@ -9,7 +9,7 @@ Make sure you have `yo` and `generator-ng-gulp` installed
 `npm install -g generator-ng-gulp yo`  
 `yo ng-gulp <app-name>`
 
-You can replace `<app-name>` with your apps name, or it will use the name of the folder it is in when being run.
+You can replace `<app-name>` with your app's name, or it will use the name of the folder it is in when being run.
 
 ### Options
 
