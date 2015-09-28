@@ -67,6 +67,11 @@ Generator.prototype.askForRouting = function askForRouting() {
 			this.routerProvider = '$routeProvider';
 		}
 
+		// check if no router
+		if (this.router == null) {
+			this.router = 'no-router';
+		}
+
 		done();
 	}.bind(this));
 };
