@@ -1,5 +1,5 @@
 {
-	"name": "mtc-app-gulp-test",
+	"name": "<%= appName %>",
 	"version": "0.0.0",
 	"dependencies": {
 		"karma": "~0.12.31"
