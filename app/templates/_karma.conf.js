@@ -17,7 +17,10 @@ module.exports = function (config) {
 			'app/app.js',
 			'.generated/templates.js'<% if (useRouting) { %>,
 			'.generated/app/modules/routes/routes.concat.js'<% } %>,
-			'.generated/app/**/*.concat.js' // Leave this last!!!
+			'app/modules/**/*.module.js',
+			'app/modules/**/*.+(component|controller|filter|directive|service|constant|decorator|factory|value|config|run).js',
+			'app/modules/**/*.spec.js',
+			'app/app.spec.js'
 		],
 
 		// testing framework to use (jasmine/mocha/qunit/...)

@@ -61,6 +61,7 @@ You can generate sub-modules or routes with sub-generators
 
 This generator will allow you to make the following angular components:
 
+* component
 * directive
 * value
 * constant
@@ -72,7 +73,7 @@ This generator will allow you to make the following angular components:
 * decorator
 * run
 
-You are presented with options as to which ones you want.  If you decide later you want more, just re-run the sub-generator with the same `<module-path-with-name`> and choose the piece you want.
+You are presented with options as to which ones you want.  If you decide later you want more, just re-run the sub-generator with the same `<module-path-with-name>` and choose the piece you want.
 
 `<module-path-with-name>` looks something like this:
 
@@ -116,7 +117,6 @@ A new e2e test is created for each route and placed in `test/e2e`.
 ### Think About
 * [ ] Improve `gulp test --debug` to not have to restart when files change
 * [ ] Check back in on protractor 2.0.0 to see if it will work with pages with no `ng-app`
-* [ ] Add back CI tasks (if needing to be different) when Bamboo is up
 * [ ] When bower task occurs, write any main js files into karma.conf.js
 * [ ] Add new angular router option when available
 * [ ] Make provider component

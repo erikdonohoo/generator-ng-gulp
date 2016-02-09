@@ -67,9 +67,9 @@ gulp.task('templates', function () {
 });
 
 // Put all JS in one file
-var allPageJs = ['app/app.js', 'app/modules/**/*.+(controller|filter|directive|service|constant|decorator|factory|value|config|run).js'];
+var allPageJs = ['app/app.js', 'app/modules/**/*.+(component|controller|filter|directive|service|constant|decorator|factory|value|config|run).js'];
 var moduleJs = 'app/modules/**/*.module.js';
-var nonModuleJs = 'app/modules/**/*.+(controller|filter|directive|service|constant|decorator|factory|value|config|run).js';
+var nonModuleJs = 'app/modules/**/*.+(component|controller|filter|directive|service|constant|decorator|factory|value|config|run).js';
 gulp.task('js-watch', ['js'], reload);
 gulp.task('js', ['templates'], function () {
 	return gulp.src(['app/app.js', moduleJs, nonModuleJs])
@@ -95,7 +95,7 @@ function concatTestDir(dir) {
 	folders.map(function (folder) {
 		var stream = gulp.src([
 			'./' + path.join(dir, folder, '/*.module.js'),
-			'./' + path.join(dir, folder, '/*.+(controller|filter|directive|service|constant|decorator|factory|value|config|run).js'),
+			'./' + path.join(dir, folder, '/*.+(component|controller|filter|directive|service|constant|decorator|factory|value|config|run).js'),
 			'./' + path.join(dir, folder, '/*.spec.js')
 		]).pipe(concat(folder + '.concat.js'))
 			.pipe(replace('\'use strict\';', ''))
@@ -261,7 +261,7 @@ gulp.task('serve', ['css', 'js', 'bower'], function () {
 	gulp.watch([
 		'index.html',
 		'modules/**/*.html',
-		'**/*.+(controller|filter|directive|service|constant|decorator|factory|value|config|run).js'
+		'**/*.+(component|controller|filter|directive|service|constant|decorator|factory|value|config|run).js'
 	], {cwd: 'app'}, reload);
 	watch(allPageJs, function () {
 		gulp.start('js-watch');
