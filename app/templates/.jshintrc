@@ -12,6 +12,7 @@
 	"unused": true,
 	"strict": true,
 	"boss": true,
+	"validthis": true,
 	"globals": {
 		"after": false,
 		"afterEach": false,

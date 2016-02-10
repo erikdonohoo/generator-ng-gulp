@@ -36,6 +36,9 @@ Generator.prototype.askForComponents = function () {
 		name: 'components',
 		message: 'What types of files do you need?',
 		choices: [{
+			name: 'Component',
+			value: 'component'
+		},{
 			name: 'Controller',
 			value: 'controller'
 		}, {
@@ -100,11 +103,19 @@ Generator.prototype.write = function () {
 			);
 		}
 
-		if (component === 'directive') {
-			this.template(
-				'_tpl.html',
-				'app/' + this.templatePath
-			);
+		if (component === 'directive' || component === 'component') {
+			if(component === 'component') {
+				this.template(
+					'_componenttpl.html',
+					'app/' + this.templatePath
+				);
+			}
+			else {
+				this.template(
+					'_tpl.html',
+					'app/' + this.templatePath
+				);
+			}
 			this.template(
 				'_.less',
 				this.useLess ? modulePath + this.moduleName + '.less' :
