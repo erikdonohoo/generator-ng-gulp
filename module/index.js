@@ -109,18 +109,23 @@ Generator.prototype.write = function () {
 					'_componenttpl.html',
 					'app/' + this.templatePath
 				);
+				this.template(
+					'_component.less',
+					this.useLess ? modulePath + this.moduleName + '.less' :
+					modulePath + this.moduleName + '.css'
+				);
 			}
 			else {
 				this.template(
 					'_tpl.html',
 					'app/' + this.templatePath
 				);
-			}
-			this.template(
-				'_.less',
-				this.useLess ? modulePath + this.moduleName + '.less' :
+				this.template(
+					'_.less',
+					this.useLess ? modulePath + this.moduleName + '.less' :
 					modulePath + this.moduleName + '.css'
-			);
+				);
+			}
 		}
 
 		utils.writeScript(this.modulePath + this.moduleName + '.' + component + '.js');
