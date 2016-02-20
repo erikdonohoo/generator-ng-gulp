@@ -83,7 +83,7 @@ Generator.prototype.write = function () {
 		// Check if module file exists
 		fs.lstatSync(modulePath + this.moduleName + '.module.js');
 	} catch (e) {
-		this.needsTemplates = this.components.indexOf('directive') !== -1;
+		this.needsTemplates = this.components.indexOf('directive') !== -1 || this.components.indexOf('component') !== -1;
 		this.copy('_module.js', modulePath + this.moduleName + '.module.js');
 		utils.writeScript(this.modulePath + this.moduleName + '.module.js', this);
 	}
